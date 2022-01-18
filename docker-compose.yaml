@@ -25,6 +25,8 @@ services:
       - ./log-config.xml:/config/log-config.xml
     ports:
       - 8545:8545
+      - 8546:8546
+      - 8547:8547
       - 30303:30303
     networks:
       besu-network:
@@ -49,8 +51,10 @@ services:
       - ./node2/data:/opt/besu/data
       - ./log-config.xml:/config/log-config.xml
     ports:
-      - 8546:8545
-      - 30304:30303
+      - 7245:8545
+      - 7246:8546
+      - 7247:8547
+      - 32303:30303
     depends_on:
       - bootnode
     networks:
@@ -77,8 +81,10 @@ services:
       - ./node3/data:/opt/besu/data
       - ./log-config.xml:/config/log-config.xml
     ports:
-      - 8547:8545
-      - 30305:30303
+      - 7345:8545
+      - 7346:8546
+      - 7347:8547
+      - 33303:30303
     depends_on:
       - bootnode
     networks:
@@ -104,8 +110,10 @@ services:
       - ./node4/data:/opt/besu/data
       - ./log-config.xml:/config/log-config.xml
     ports:
-      - 8548:8545
-      - 30306:30303
+      - 7445:8545
+      - 7446:8546
+      - 7447:8547
+      - 34303:30303
     depends_on:
       - bootnode
     networks:

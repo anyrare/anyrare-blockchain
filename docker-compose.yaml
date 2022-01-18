@@ -19,7 +19,7 @@ services:
         --genesis-file=/opt/besu/genesis.json --rpc-http-enabled \
         --host-allowlist="*" --rpc-http-cors-origins="all" \
         --rpc-http-api=ETH,NET,IBFT;
-
+    command: -c "chmod -R a+x node1"
     volumes:
       - ./genesis.json:/opt/besu/genesis.json
       - ./node1/data:/opt/besu/data

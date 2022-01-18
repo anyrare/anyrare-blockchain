@@ -30,7 +30,6 @@ services:
       besu-network:
         ipv4_address: 172.16.236.30
 
-  
   node2:
     container_name: node2
     image: hyperledger/besu:21.10.8

@@ -15,7 +15,6 @@ services:
       - /bin/bash
       - -c
       - |
-        sleep 10;
         /opt/besu/bin/besu --data-path=/opt/besu/data \
         --genesis-file=/opt/besu/genesis.json --rpc-http-enabled \
         --host-allowlist="*" --rpc-http-cors-origins="all" \

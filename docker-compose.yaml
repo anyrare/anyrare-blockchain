@@ -11,7 +11,6 @@ services:
   bootnode:
     container_name: bootnode
     image: hyperledger/besu:21.10.8
-    user: "besu:besu"
     entrypoint:
       - /bin/bash
       - -c

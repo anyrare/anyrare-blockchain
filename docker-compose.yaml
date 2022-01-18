@@ -20,8 +20,12 @@ services:
         --host-allowlist="*" --rpc-http-cors-origins="all" \
         --rpc-http-api=ETH,NET,IBFT;
     volumes:
-      - ./genesis.json:/opt/besu/genesis.json
-      - ./node1/data:/opt/besu/data
+      - type: bind
+        source: ./genesis.json
+        target: /opt/besu/genesis.json
+      - type: bind
+        source: ./node1/data
+        target: /opt/besu/data
     ports:
       - 8545:8545
       - 30303:30303

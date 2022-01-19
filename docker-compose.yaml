@@ -15,9 +15,12 @@ services:
       - /bin/bash
       - -c
       - |
-        /opt/besu/bin/besu --data-path=/opt/besu/data \
-        --genesis-file=/opt/besu/genesis.json --rpc-http-enabled \
-        --host-allowlist="*" --rpc-http-cors-origins="all" \
+        /opt/besu/bin/besu \
+        --data-path=/opt/besu/data \
+        --genesis-file=/opt/besu/genesis.json \
+        --rpc-http-enabled \
+        --host-allowlist="*" \
+        --rpc-http-cors-origins=chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn \
         --rpc-http-api=ETH,NET,IBFT;
     volumes:
       - ./genesis.json:/opt/besu/genesis.json
@@ -41,10 +44,14 @@ services:
       - -c
       - |
         sleep 10;
-        /opt/besu/bin/besu --data-path=/opt/besu/data \
-         --genesis-file=/opt/besu/genesis.json --rpc-http-enabled \
-         --host-allowlist="*" --rpc-http-cors-origins="all" \
-         --bootnodes=enode://c7b3c1871f30f6cf1ea2b64fd2799f884bedbc00a0a62e7550ae6f68de444cbdf539d1f8d79bb34208527cfa6482ccbb5072ffc1c13b5679b9d061edaa34cc2c@172.16.236.30:30303 --p2p-port=30303;
+        /opt/besu/bin/besu \
+        --data-path=/opt/besu/data \
+        --genesis-file=/opt/besu/genesis.json \
+        --rpc-http-enabled \
+        --host-allowlist="*" \
+        --rpc-http-cors-origins=chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn \
+        --bootnodes=enode://c7b3c1871f30f6cf1ea2b64fd2799f884bedbc00a0a62e7550ae6f68de444cbdf539d1f8d79bb34208527cfa6482ccbb5072ffc1c13b5679b9d061edaa34cc2c@172.16.236.30:30303 \
+        --p2p-port=30303;
 
     volumes:
       - ./genesis.json:/opt/besu/genesis.json
@@ -71,10 +78,14 @@ services:
       - -c
       - |
         sleep 10;
-        /opt/besu/bin/besu --data-path=/opt/besu/data \
-         --genesis-file=/opt/besu/genesis.json --rpc-http-enabled \
-         --host-allowlist="*" --rpc-http-cors-origins="all" \
-         --bootnodes=enode://c7b3c1871f30f6cf1ea2b64fd2799f884bedbc00a0a62e7550ae6f68de444cbdf539d1f8d79bb34208527cfa6482ccbb5072ffc1c13b5679b9d061edaa34cc2c@172.16.236.30:30303 --p2p-port=30303;
+        /opt/besu/bin/besu \
+        --data-path=/opt/besu/data \
+        --genesis-file=/opt/besu/genesis.json \
+        --rpc-http-enabled \
+        --host-allowlist="*" \
+        --rpc-http-cors-origins=chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn \
+        --bootnodes=enode://c7b3c1871f30f6cf1ea2b64fd2799f884bedbc00a0a62e7550ae6f68de444cbdf539d1f8d79bb34208527cfa6482ccbb5072ffc1c13b5679b9d061edaa34cc2c@172.16.236.30:30303 \
+        --p2p-port=30303;
 
     volumes:
       - ./genesis.json:/opt/besu/genesis.json
@@ -100,10 +111,14 @@ services:
       - -c
       - |
         sleep 10;
-        /opt/besu/bin/besu --data-path=/opt/besu/data \
-         --genesis-file=/opt/besu/genesis.json --rpc-http-enabled \
-         --host-allowlist="*" --rpc-http-cors-origins="all" \
-         --bootnodes=enode://c7b3c1871f30f6cf1ea2b64fd2799f884bedbc00a0a62e7550ae6f68de444cbdf539d1f8d79bb34208527cfa6482ccbb5072ffc1c13b5679b9d061edaa34cc2c@172.16.236.30:30303 --p2p-port=30303;
+        /opt/besu/bin/besu \
+        --data-path=/opt/besu/data \
+        --genesis-file=/opt/besu/genesis.json \
+        --rpc-http-enabled \
+        --host-allowlist="*" \
+        --rpc-http-cors-origins=chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn \
+        --bootnodes=enode://c7b3c1871f30f6cf1ea2b64fd2799f884bedbc00a0a62e7550ae6f68de444cbdf539d1f8d79bb34208527cfa6482ccbb5072ffc1c13b5679b9d061edaa34cc2c@172.16.236.30:30303 \
+        --p2p-port=30303;
 
     volumes:
       - ./genesis.json:/opt/besu/genesis.json

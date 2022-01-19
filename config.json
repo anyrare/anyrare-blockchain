@@ -1,7 +1,7 @@
 {
   "genesis": {
     "config": {
-      "chainId": 1688,
+      "chainId": 1687,
       "muirglacierblock": 0,
       "ibft2": {
         "blockperiodseconds": 1,

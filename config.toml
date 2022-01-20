@@ -2,25 +2,32 @@
 logging="INFO"
 data-path="/opt/besu/data"
 host-allowlist=["*"]
-node-private-key-file="/opt/besu/keys/nodekey"
+node-private-key-file="/opt/besu/keys/key"
+genesis-file="/opt/besu/genesis.json"
+min-gas-price=0
+p2p-port=30303
 
 # rpc
 rpc-http-enabled=true
 rpc-http-host="0.0.0.0"
 rpc-http-port=8545
-rpc-http-cors-origins=["*"]
+# rpc-http-cors-origins=["*"]
+rpc-http-cors-origins=["chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn"]
+rpc-http-api=["EEA","WEB3","ETH","NET","TRACE","DEBUG","ADMIN","PERM","IBFT"]
 
 # ws
 rpc-ws-enabled=true
 rpc-ws-host="0.0.0.0"
 rpc-ws-port=8546
+rpc-ws-api=["EEA","WEB3","ETH","NET","TRACE","DEBUG","ADMIN","PERM","IBFT"]
 
 # graphql
 graphql-http-enabled=true
 graphql-http-host="0.0.0.0"
 graphql-http-port=8547
-graphql-http-cors-origins=["*"]
-
+# graphql-http-cors-origins=["*"]
+graphql-http-cors-origins=["chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn"]
+    
 # metrics
 metrics-enabled=true
 metrics-host="0.0.0.0"
@@ -29,8 +36,6 @@ metrics-port=9545
 # bootnodes
 bootnodes=["enode://c7b3c1871f30f6cf1ea2b64fd2799f884bedbc00a0a62e7550ae6f68de444cbdf539d1f8d79bb34208527cfa6482ccbb5072ffc1c13b5679b9d061edaa34cc2c@172.16.236.30:30303"]
 
-
-# Discovery at boot is set to a list of static files, but will also discover new nodes should they be added
 # static nodes
-static-nodes-file="static-nodes.json"
+# static-nodes-file="static-nodes.json"
 discovery-enabled=true

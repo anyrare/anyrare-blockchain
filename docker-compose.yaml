@@ -16,16 +16,13 @@ services:
       - -c
       - |
         /opt/besu/bin/besu \
-        --genesis-file=/opt/besu/genesis.json \
-        --config-file=/opt/besu/config.toml \
-        --min-gas-price=0 \
-        --rpc-http-api=EEA,WEB3,ETH,NET,TRACE,DEBUG,ADMIN,PERM,IBFT \
-        --rpc-ws-api=EEA,WEB3,ETH,NET,TRACE,DEBUG,ADMIN,PERM,IBFT;
+        --config-file=/opt/besu/config.toml;
 
     volumes:
       - ./config.toml:/opt/besu/config.toml
       - ./genesis.json:/opt/besu/genesis.json
       - ./node1/data:/opt/besu/data
+      - ./node1/keys:/opt/besu/keys
       - ./log-config.xml:/config/log-config.xml
     ports:
       - 8545:8545
@@ -44,16 +41,13 @@ services:
       - |
         sleep 10;
         /opt/besu/bin/besu \
-        --genesis-file=/opt/besu/genesis.json \
-        --config-file=/opt/besu/config.toml \
-        --min-gas-price=0 \
-        --rpc-http-api=EEA,WEB3,ETH,NET,TRACE,DEBUG,ADMIN,PERM,IBFT \
-        --rpc-ws-api=EEA,WEB3,ETH,NET,TRACE,DEBUG,ADMIN,PERM,IBFT;
-        --p2p-port=30303;
+        --config-file=/opt/besu/config.toml
 
     volumes:
+      - ./config.toml:/opt/besu/config.toml
       - ./genesis.json:/opt/besu/genesis.json
       - ./node2/data:/opt/besu/data
+      - ./node2/keys:/opt/besu/keys
       - ./log-config.xml:/config/log-config.xml
     ports:
       - 7245:8545
@@ -74,17 +68,14 @@ services:
       - -c
       - |
         sleep 10;
-        --data-path=/opt/besu/data \
-        --genesis-file=/opt/besu/genesis.json \
+        /opt/besu/bin/besu \
         --config-file=/opt/besu/config.toml \
-        --min-gas-price=0 \
-        --rpc-http-api=EEA,WEB3,ETH,NET,TRACE,DEBUG,ADMIN,PERM,IBFT \
-        --rpc-ws-api=EEA,WEB3,ETH,NET,TRACE,DEBUG,ADMIN,PERM,IBFT;
-        --p2p-port=30303;
 
     volumes:
+      - ./config.toml:/opt/besu/config.toml
       - ./genesis.json:/opt/besu/genesis.json
       - ./node3/data:/opt/besu/data
+      - ./node3/keys:/opt/besu/keys
       - ./log-config.xml:/config/log-config.xml
     ports:
       - 7345:8545
@@ -104,17 +95,14 @@ services:
       - -c
       - |
         sleep 10;
-        --data-path=/opt/besu/data \
-        --genesis-file=/opt/besu/genesis.json \
+        /opt/besu/bin/besu \
         --config-file=/opt/besu/config.toml \
-        --min-gas-price=0 \
-        --rpc-http-api=EEA,WEB3,ETH,NET,TRACE,DEBUG,ADMIN,PERM,IBFT \
-        --rpc-ws-api=EEA,WEB3,ETH,NET,TRACE,DEBUG,ADMIN,PERM,IBFT;
-        --p2p-port=30303;
 
     volumes:
+      - ./config.toml:/opt/besu/config.toml
       - ./genesis.json:/opt/besu/genesis.json
       - ./node4/data:/opt/besu/data
+      - ./node4/keys:/opt/besu/keys
       - ./log-config.xml:/config/log-config.xml
     ports:
       - 7445:8545

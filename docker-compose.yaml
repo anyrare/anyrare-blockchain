@@ -16,20 +16,19 @@ services:
       - -c
       - |
         /opt/besu/bin/besu \
-        --data-path=/opt/besu/data \
         --genesis-file=/opt/besu/genesis.json \
-        --rpc-http-enabled \
-        --host-allowlist="*" \
-        --rpc-http-cors-origins=chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn \
-        --rpc-http-api=ETH,NET,IBFT;
+        --config-file=/opt/besu/config.toml \
+        --min-gas-price=0 \
+        --rpc-http-api=EEA,WEB3,ETH,NET,TRACE,DEBUG,ADMIN,PERM,IBFT \
+        --rpc-ws-api=EEA,WEB3,ETH,NET,TRACE,DEBUG,ADMIN,PERM,IBFT;
+
     volumes:
+      - ./config.toml:/opt/besu/config.toml
       - ./genesis.json:/opt/besu/genesis.json
       - ./node1/data:/opt/besu/data
       - ./log-config.xml:/config/log-config.xml
     ports:
       - 8545:8545
-      - 8546:8546
-      - 8547:8547
       - 30303:30303
     networks:
       besu-network:
@@ -45,12 +44,11 @@ services:
       - |
         sleep 10;
         /opt/besu/bin/besu \
-        --data-path=/opt/besu/data \
         --genesis-file=/opt/besu/genesis.json \
-        --rpc-http-enabled \
-        --host-allowlist="*" \
-        --rpc-http-cors-origins=chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn \
-        --bootnodes=enode://c7b3c1871f30f6cf1ea2b64fd2799f884bedbc00a0a62e7550ae6f68de444cbdf539d1f8d79bb34208527cfa6482ccbb5072ffc1c13b5679b9d061edaa34cc2c@172.16.236.30:30303 \
+        --config-file=/opt/besu/config.toml \
+        --min-gas-price=0 \
+        --rpc-http-api=EEA,WEB3,ETH,NET,TRACE,DEBUG,ADMIN,PERM,IBFT \
+        --rpc-ws-api=EEA,WEB3,ETH,NET,TRACE,DEBUG,ADMIN,PERM,IBFT;
         --p2p-port=30303;
 
     volumes:
@@ -59,8 +57,6 @@ services:
       - ./log-config.xml:/config/log-config.xml
     ports:
       - 7245:8545
-      - 7246:8546
-      - 7247:8547
       - 32303:30303
     depends_on:
       - bootnode
@@ -78,13 +74,12 @@ services:
       - -c
       - |
         sleep 10;
-        /opt/besu/bin/besu \
         --data-path=/opt/besu/data \
         --genesis-file=/opt/besu/genesis.json \
-        --rpc-http-enabled \
-        --host-allowlist="*" \
-        --rpc-http-cors-origins=chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn \
-        --bootnodes=enode://c7b3c1871f30f6cf1ea2b64fd2799f884bedbc00a0a62e7550ae6f68de444cbdf539d1f8d79bb34208527cfa6482ccbb5072ffc1c13b5679b9d061edaa34cc2c@172.16.236.30:30303 \
+        --config-file=/opt/besu/config.toml \
+        --min-gas-price=0 \
+        --rpc-http-api=EEA,WEB3,ETH,NET,TRACE,DEBUG,ADMIN,PERM,IBFT \
+        --rpc-ws-api=EEA,WEB3,ETH,NET,TRACE,DEBUG,ADMIN,PERM,IBFT;
         --p2p-port=30303;
 
     volumes:
@@ -93,8 +88,6 @@ services:
       - ./log-config.xml:/config/log-config.xml
     ports:
       - 7345:8545
-      - 7346:8546
-      - 7347:8547
       - 33303:30303
     depends_on:
       - bootnode
@@ -111,13 +104,12 @@ services:
       - -c
       - |
         sleep 10;
-        /opt/besu/bin/besu \
         --data-path=/opt/besu/data \
         --genesis-file=/opt/besu/genesis.json \
-        --rpc-http-enabled \
-        --host-allowlist="*" \
-        --rpc-http-cors-origins=chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn \
-        --bootnodes=enode://c7b3c1871f30f6cf1ea2b64fd2799f884bedbc00a0a62e7550ae6f68de444cbdf539d1f8d79bb34208527cfa6482ccbb5072ffc1c13b5679b9d061edaa34cc2c@172.16.236.30:30303 \
+        --config-file=/opt/besu/config.toml \
+        --min-gas-price=0 \
+        --rpc-http-api=EEA,WEB3,ETH,NET,TRACE,DEBUG,ADMIN,PERM,IBFT \
+        --rpc-ws-api=EEA,WEB3,ETH,NET,TRACE,DEBUG,ADMIN,PERM,IBFT;
         --p2p-port=30303;
 
     volumes:
@@ -126,8 +118,6 @@ services:
       - ./log-config.xml:/config/log-config.xml
     ports:
       - 7445:8545
-      - 7446:8546
-      - 7447:8547
       - 34303:30303
     depends_on:
       - bootnode

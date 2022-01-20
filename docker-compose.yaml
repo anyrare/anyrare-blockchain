@@ -41,7 +41,7 @@ services:
       - |
         sleep 10;
         /opt/besu/bin/besu \
-        --config-file=/opt/besu/config.toml
+        --config-file=/opt/besu/config.toml;
 
     volumes:
       - ./config.toml:/opt/besu/config.toml
@@ -69,7 +69,7 @@ services:
       - |
         sleep 10;
         /opt/besu/bin/besu \
-        --config-file=/opt/besu/config.toml \
+        --config-file=/opt/besu/config.toml;
 
     volumes:
       - ./config.toml:/opt/besu/config.toml
@@ -96,7 +96,7 @@ services:
       - |
         sleep 10;
         /opt/besu/bin/besu \
-        --config-file=/opt/besu/config.toml \
+        --config-file=/opt/besu/config.toml;
 
     volumes:
       - ./config.toml:/opt/besu/config.toml

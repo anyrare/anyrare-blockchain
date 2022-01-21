@@ -10,6 +10,7 @@ networks:
 services: 
   bootnode:
     container_name: bootnode
+    restart: "on-failure"
     image: hyperledger/besu:21.10.8
     entrypoint:
       - /bin/bash
@@ -17,12 +18,12 @@ services:
       - |
         /opt/besu/bin/besu \
         --config-file=/opt/besu/config.toml;
-
     volumes:
       - ./config.toml:/opt/besu/config.toml
       - ./genesis.json:/opt/besu/genesis.json
       - ./node1/data:/opt/besu/data
       - ./node1/keys:/opt/besu/keys
+      - ./static-nodes.json:/config/static-nodes.json
       - ./log-config.xml:/config/log-config.xml
     ports:
       - 8545:8545
@@ -33,8 +34,8 @@ services:
 
   node2:
     container_name: node2
+    restart: "on-failure"
     image: hyperledger/besu:21.10.8
-
     entrypoint:
       - /bin/bash
       - -c
@@ -42,12 +43,12 @@ services:
         sleep 10;
         /opt/besu/bin/besu \
         --config-file=/opt/besu/config.toml;
-
     volumes:
       - ./config.toml:/opt/besu/config.toml
       - ./genesis.json:/opt/besu/genesis.json
       - ./node2/data:/opt/besu/data
       - ./node2/keys:/opt/besu/keys
+      - ./static-nodes.json:/config/static-nodes.json
       - ./log-config.xml:/config/log-config.xml
     ports:
       - 7245:8545
@@ -57,12 +58,11 @@ services:
     networks:
       besu-network:
         ipv4_address: 172.16.236.31
-
   
   node3:
     container_name: node3
+    restart: "on-failure"
     image: hyperledger/besu:21.10.8
-
     entrypoint:
       - /bin/bash
       - -c
@@ -70,12 +70,12 @@ services:
         sleep 10;
         /opt/besu/bin/besu \
         --config-file=/opt/besu/config.toml;
-
     volumes:
       - ./config.toml:/opt/besu/config.toml
       - ./genesis.json:/opt/besu/genesis.json
       - ./node3/data:/opt/besu/data
       - ./node3/keys:/opt/besu/keys
+      - ./static-nodes.json:/config/static-nodes.json
       - ./log-config.xml:/config/log-config.xml
     ports:
       - 7345:8545
@@ -88,8 +88,8 @@ services:
 
   node4:
     container_name: node4
+    restart: "on-failure"
     image: hyperledger/besu:21.10.8
-
     entrypoint:
       - /bin/bash
       - -c
@@ -97,12 +97,12 @@ services:
         sleep 10;
         /opt/besu/bin/besu \
         --config-file=/opt/besu/config.toml;
-
     volumes:
       - ./config.toml:/opt/besu/config.toml
       - ./genesis.json:/opt/besu/genesis.json
       - ./node4/data:/opt/besu/data
       - ./node4/keys:/opt/besu/keys
+      - ./static-nodes.json:/config/static-nodes.json
       - ./log-config.xml:/config/log-config.xml
     ports:
       - 7445:8545

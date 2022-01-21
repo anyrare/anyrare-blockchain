@@ -1,4 +1,4 @@
-logging="TRACE"
+logging="INFO"
 data-path="/opt/besu/data"
 host-allowlist=["*"]
 node-private-key-file="/opt/besu/keys/key"
@@ -12,7 +12,16 @@ rpc-http-enabled=true
 rpc-http-host="0.0.0.0"
 rpc-http-port=8545
 # rpc-http-cors-origins=["*"]
-rpc-http-cors-origins=["chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn"]
+rpc-http-cors-origins=["chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn",
+"http://localhost:8014",
+"https://explorer-testnet.anyrare.network",
+"https://web-rc.anyrare.dev",
+"https://web-dev.anyrare.dev",
+"https://web-test.anyrare.dev",
+"https://api-rc.anyrare.dev",
+"https://api-dev.anyrare.dev",
+"https://api-test.anyrare.dev"
+]
 rpc-http-api=["EEA","WEB3","ETH","NET","TRACE","DEBUG","ADMIN","IBFT"]
 
 # ws
@@ -26,7 +35,16 @@ graphql-http-enabled=true
 graphql-http-host="0.0.0.0"
 graphql-http-port=8547
 # graphql-http-cors-origins=["*"]
-graphql-http-cors-origins=["chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn"]
+graphql-http-cors-origins=["chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn",
+"http://localhost:8014",
+"https://explorer-testnet.anyrare.network",
+"https://web-rc.anyrare.dev",
+"https://web-dev.anyrare.dev",
+"https://web-test.anyrare.dev",
+"https://api-rc.anyrare.dev",
+"https://api-dev.anyrare.dev",
+"https://api-test.anyrare.dev"
+]
     
 # metrics
 metrics-enabled=true

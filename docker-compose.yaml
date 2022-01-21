@@ -1,7 +1,7 @@
 version: "3.4"
 
 networks:
-  besu-network:
+  anyrare-network:
     driver: bridge
     ipam:
       config:
@@ -29,11 +29,11 @@ services:
       - 8545:8545
       - 30303:30303
     networks:
-      besu-network:
+      anyrare-network:
         ipv4_address: 172.16.236.30
 
-  node2:
-    container_name: node2
+  rpcnode:
+    container_name: rpcnode
     restart: "on-failure"
     image: hyperledger/besu:21.10.8
     entrypoint:
@@ -56,7 +56,7 @@ services:
     depends_on:
       - bootnode
     networks:
-      besu-network:
+      anyrare-network:
         ipv4_address: 172.16.236.31
   
   node3:
@@ -83,7 +83,7 @@ services:
     depends_on:
       - bootnode
     networks:
-      besu-network:
+      anyrare-network:
         ipv4_address: 172.16.236.32
 
   node4:
@@ -110,5 +110,19 @@ services:
     depends_on:
       - bootnode
     networks:
-      besu-network:
+      anyrare-network:
         ipv4_address: 172.16.236.33
+
+
+  block-explorer:
+    build: block-explorer/.
+    container_name: block-explorer
+    restart: "on-failure"
+    image: anyrare/block-explorer:latest
+    ports:
+      - 8014:80
+    depends_on:
+      - rpcnode
+    networks:
+      anyrare-network:
+        ipv4_address: 172.16.236.65

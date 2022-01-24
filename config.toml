@@ -59,7 +59,7 @@ graphql-http-cors-origins=[
 "https://web-test.anyrare.dev",
 "https://graphql-rc.anyrare.dev",
 "https://graphql-dev.anyrare.dev",
-"https://grapqj-test.anyrare.dev"
+"https://graphgl-test.anyrare.dev"
 ]
     
 # metrics

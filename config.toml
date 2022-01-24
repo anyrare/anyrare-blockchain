@@ -1,11 +1,6 @@
 logging="INFO"
 data-path="/opt/besu/data"
-host-allowlist=[
-"localhost",
-"127.0.0.1",
-"testnet.anyrare.network",
-"explorer-testnet.anyrare.network"    
-]
+host-allowlist=["*"]
 node-private-key-file="/opt/besu/keys/key"
 genesis-file="/opt/besu/genesis.json"
 max-peers=64
@@ -17,17 +12,18 @@ rpc-http-enabled=true
 rpc-http-host="0.0.0.0"
 rpc-http-port=8545
 rpc-http-cors-origins=[
-"chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn",
-"http://localhost:8280",
-"http://localhost:8080",
-"http://localhost:8014",
-"https://explorer-testnet.anyrare.network",
-"https://web-rc.anyrare.dev",
-"https://web-dev.anyrare.dev",
-"https://web-test.anyrare.dev",
-"https://graphql-rc.anyrare.dev",
-"https://graphql-dev.anyrare.dev",
-"https://graphql-test.anyrare.dev"
+"*"
+# "chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn",
+# "http://localhost:8280",
+# "http://localhost:8080",
+# "http://localhost:8014",
+# "https://explorer-testnet.anyrare.network",
+# "https://web-rc.anyrare.dev",
+# "https://web-dev.anyrare.dev",
+# "https://web-test.anyrare.dev",
+# "https://graphql-rc.anyrare.dev",
+# "https://graphql-dev.anyrare.dev",
+# "https://graphql-test.anyrare.dev"
 ]
 rpc-http-api=["EEA","WEB3","ETH","NET","TRACE","DEBUG","ADMIN","IBFT"]
 

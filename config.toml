@@ -1,11 +1,12 @@
 logging="INFO"
 data-path="/opt/besu/data"
 host-allowlist=[
+"localhost",
 "localhost:8280",
 "localhost:8080",
 "localhost:8014",
 "testnet.anyrare.network",
-"*.anyrare.dev"
+"explorer.testnet.anyrare.network"    
 ]
 node-private-key-file="/opt/besu/keys/key"
 genesis-file="/opt/besu/genesis.json"

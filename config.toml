@@ -4,7 +4,7 @@ host-allowlist=[
 "localhost:8280",
 "localhost:8080",
 "localhost:8014",
-"*.anyrare.network",
+"testnet.anyrare.network",
 "*.anyrare.dev"
 ]
 node-private-key-file="/opt/besu/keys/key"
